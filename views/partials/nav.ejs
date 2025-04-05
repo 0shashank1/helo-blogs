@@ -3,7 +3,7 @@
   data-bs-theme="dark"
 >
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Blogify</a>
+    <a class="navbar-brand" href="/">Blogify</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -32,10 +32,11 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >   
-          <%= locals.user.email %>
+          <%= locals.user.fullName %>
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/user/logout">Logout</a></li>
+            <li><a class="dropdown-item" href="/user/myposts">my posts</a></li>
           </ul>
         </li>
         <% } else {%>

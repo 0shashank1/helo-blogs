@@ -4,6 +4,7 @@ const  {
   handleGetSignup,
   handlePostSignin,
   handleLogout,
+  handleGetMyPosts,
   handlePostSignup,
 
 } = require("../controllers/user")
@@ -16,6 +17,8 @@ router.get("/signup", handleGetSignup );
 router.post("/signin", handlePostSignin);
 
 router.get("/logout", handleLogout);
+
+router.get("/myposts", handleGetMyPosts);
 
 router.post("/signup",handlePostSignup);
 

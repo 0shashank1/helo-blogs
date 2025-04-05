@@ -7,6 +7,7 @@ const {
   postCommentToaBlog,
   getAddPost,
   uploadBlog,
+  deleteBlogById,
 } = require("../controllers/blog");
 
 const router = Router();
@@ -27,7 +28,11 @@ router.get("/add-new", getAddPost);
 
 router.get("/:id", getBlogById);
 
+
+router.get("/delete/:id", deleteBlogById );
+
 router.post("/comment/:blogId", postCommentToaBlog);
+
 
 
 
