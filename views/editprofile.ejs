@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+    <title>edit profile</title>
+  </head>
+  <body>
+    <%- include('./partials/nav') %>
+
+    <div class="container mt-3">
+      <form action="/user/updateProfileimg" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="profileImage" class="form-label">update profile image</label>
+          <input
+            type="file"
+            class="form-control"
+            id="profileImage"
+            name="profileImage"
+            aria-describedby="profileImage"
+          />
+        </div>
+          <button class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+
+
+
+
+
+    <div class="container mt-3">
+        <form action="/user/updateUserName" method="post" >
+          <div class="mb-3">
+            <label for="username" class="form-label">update username</label>
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              name="username"
+              aria-describedby="username"
+            />
+          </div>
+          <div class="mb-3">
+            <button class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+
+
+      <div class="container mt-3">
+        <form action="/user/updateUserPassword" method="post" >
+          <div class="mb-3">
+            <label for="password" class="form-label">update password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              name="password"
+              aria-describedby="password"
+            />
+          </div>
+          <div class="mb-3">
+            <button class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+
+
+
+
+
+    <%- include('./partials/scripts') %>
+  </body>
+</html>

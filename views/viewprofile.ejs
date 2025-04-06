@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+    <title>profile</title>
+  </head>
+  <body>
+    <%- include('./partials/nav') %>
+    <br><br>
+    <div class="container mt-3">
+    <div class="card mb-3" style="max-width: 720px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="<%= userdetails.profileImageURL %>" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h3 class="card-title mb-3"><%= userdetails.fullName %></h3>
+              <h5 class="card-text"><b>email:</b>  <%= userdetails.email %></h5>
+              <h5 class="card-text"><b>Role:</b>  <%= userdetails.role.toLowerCase() %></h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br><br>
+    <div class="container mt-3"> <h1>blogs</h1></div>
+
+    <div class="container mt-3">
+      <div class="row row-cols-4">
+        <% blogs.forEach(blog => { %>
+        <div class="col">
+          <div class="card col mt-3 mb-2" style="width: 18rem">
+            <img src="<%= blog.coverImageURL %>" class="card-img-top" />
+            <div class="card-body">
+              <h5 class="card-title"><%= blog.title %></h5>
+              <a href="/blog/<%= blog._id %>" class="btn btn-primary">View</a>
+            </div>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+
+    <%- include('./partials/scripts') %>
+  </body>
+</html>
