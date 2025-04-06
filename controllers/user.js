@@ -5,13 +5,12 @@ const fs = require("fs");
 const { createHmac, randomBytes } = require("crypto");
 
 
-
-
 const handleGetSignin = (req, res) => {    return res.render("signin") };
 
 const handleGetSignup = (req, res) => {   return res.render("signup");  };
 
 
+//checks for authentication
 const handlePostSignin = async (req, res) => {
     const { email, password } = req.body;
     try {
@@ -44,6 +43,8 @@ const handleGetMyPosts = async (req, res) => {
 };
 
 
+//handleUpdateProfileImage, handleEditProfile, handleUpdateUserName,handleUpdateUserPassword
+//are for user profile edit
 const handleUpdateProfileImage = async(req, res) => {
   const user = await User.findById(req.user._id);
   if(user.profileImageURL !== "/images/default.png" ) {
@@ -115,6 +116,8 @@ const handlePostSignup =  async (req, res) => {
   return res.redirect("/");
 }
 
+
+//for user profile view
 const getUserDetails = async (req, res) => {
   const userdetails = await User.findById(req.params.id);
   const userfound = { 

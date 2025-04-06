@@ -1,5 +1,6 @@
 const { validateToken } = require("../services/authentication");
 
+//validates token
 function checkForAuthenticationCookie(cookieName) {
   return (req, res, next) => {
     const tokenCookieValue = req.cookies[cookieName];
@@ -12,6 +13,7 @@ function checkForAuthenticationCookie(cookieName) {
       req.user = userPayload;
     } catch (error) { 
       console.error("Token validation failed:", error.message);
+      res.redirect("/");
     }
 
     return next();
